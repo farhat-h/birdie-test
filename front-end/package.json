@@ -2,10 +2,18 @@
   "name": "front-end",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8000",
+      "secure": false
+    }
+  },
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.2.0",
     "react-scripts-redux-ts": "1.2.1",
+    "recharts": "^1.8.5",
     "redux-saga": "^1.0.2",
     "styled-components": "^4.2.0"
   },
@@ -30,6 +38,8 @@
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.0.9",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/recharts": "^1.8.14",
     "@types/redux": "^3.6.0",
     "@types/styled-components": "^4.1.15",
     "typescript": "^3.4.5"
