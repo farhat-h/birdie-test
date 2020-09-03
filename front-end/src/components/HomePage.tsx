@@ -54,7 +54,7 @@ const HomePage: React.FunctionComponent<HomePageProps> = (props) => {
         <Page>
             <img src={logo} alt="logo"/>
             <h1 style={styles.title} className="extra">Birdie test</h1>
-            <p style={styles.description}>@TODO type introduction here</p>
+            <p style={styles.description}>Internship application demo, <a href="https://www.linkedin.com/in/farhat-haythem/">Haythem Farhat</a></p>
             <hr/>
             <Select
                 value={props.recipientId}
