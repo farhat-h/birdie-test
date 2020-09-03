@@ -51,10 +51,26 @@ const getInitialTrackingData = async (req: Request, res: Response) => {
     }
 }
 
+
+
+function toPercents(data: any[]) {
+    if (data.length === 0) {
+        return;
+    }
+    let sum = 0
+    for (const item of data) {
+        sum += item.data
+    }
+    for (const item of data) {
+        item.data = Math.round((item.data / sum) * 100)
+    }
+
+}
 const getMedicationChart = async (req: Request, res: Response) => {
     try {
         const { recipId } = req.params
         const data = await db.getMedicationChart(recipId)
+        toPercents(data)
         return res.status(200).send(data)
 
     } catch (error) {
@@ -63,10 +79,12 @@ const getMedicationChart = async (req: Request, res: Response) => {
 
     }
 }
+
 const getMoodChart = async (req: Request, res: Response) => {
     try {
         const { recipId } = req.params
         const data = await db.getMoodChart(recipId)
+        toPercents(data)
         return res.status(200).send(data)
 
     } catch (error) {
