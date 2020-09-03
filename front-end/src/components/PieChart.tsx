@@ -55,7 +55,7 @@ const PieChart: React.FunctionComponent<{ data?: any[], label?: string, recipien
     };
     return (
         <Card>
-            <Select onChange={onChartTypeChange} value={state.chartType}>
+            <Select label={`${state.chartType} percentages`} onChange={onChartTypeChange} value={state.chartType}>
                 <option value={'medication'}>Regular Medication Intake</option>
                 <option value={'mood'}>Mood observation</option>
             </Select>
